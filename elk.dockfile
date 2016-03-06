@@ -1,0 +1,24 @@
+FROM base
+
+MAINTAINER sssrank
+
+RUN useradd -m -s /bin/bash es
+RUN su - es 
+WORKDIR /home/es
+
+ADD elasticsearch-2.2.0.tar .
+RUN ls -l
+RUN pwd
+#RUN tar -zxf elasticsearch-2.2.0.tar
+
+# Download ELK
+#RUN wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.2.0/elasticsearch-2.2.0.tar.gz
+
+# Copy supervisor configuration
+#ADD conf/supervisor_kibana.conf /etc/supervisor/conf.d/kibana.conf
+
+# Copy logstash configuration
+#ADD conf/logstash_simple.conf /opt/logstash/conf/logstash_simple.conf
+
+#EXPOSE 5601
+#CMD [ "/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf" ]
