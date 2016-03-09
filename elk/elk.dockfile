@@ -17,7 +17,7 @@ EXPOSE 9200 9300
 
 USER es
 
-CMD /home/es/elasticsearch-2.2.0/bin/elasticsearch
+ENTRYPOINT /home/es/elasticsearch-2.2.0/bin/elasticsearch 
 
 #EXPOSE 5601
 #CMD [ "/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf" ]
